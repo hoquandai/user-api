@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user.try(:authenticate, params[:password])
       user.update(token: BCrypt::Password.create(params[:email]))
-      render json: { message: 'Logged in successfully', token: user.token }
+      render json: { message: 'Logged in successfully', token: user.token, user_id: user.id }
     else
       render json: { message: 'Failed to login' }, status: :unauthorized
     end
