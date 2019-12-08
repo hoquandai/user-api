@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
   root 'welcome#hello'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  get '/users/:id' => 'users#show'
+
+  controller :sessions do
+    get 'login' => :new
+    post 'login' => :create
+    delete 'logout' => :destroy
+    get 'list' => :index
+  end
+
+  get 'users/:id' => 'users#show'
+  get 'users' => 'users#index'
+  post 'users' => 'users#create'
 end
