@@ -23,6 +23,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def with_skill
+    users = []
+    skill = Skill.find_by(id: params[:skill_id])
+    User.all.each do |user|
+      users << user if user.skills.include?(skill)
+    end
+    render_serializer users, UserSerializer
+  end
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_user

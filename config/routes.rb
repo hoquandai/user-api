@@ -12,4 +12,9 @@ Rails.application.routes.draw do
   get 'users/:id' => 'users#show'
   get 'users' => 'users#index'
   post 'users' => 'users#create'
+  get 'users_with_skills/:skill_id' => 'users#with_skill'
+
+  get 'skills/:id' => 'skills#show'
+  get 'skills' => 'skills#index'
+  post 'skills' => 'skills#create'
 end
