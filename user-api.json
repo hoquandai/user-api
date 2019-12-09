@@ -210,6 +210,161 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "get_skills",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "token",
+							"value": "$2a$12$XXOO26hp0nlpJWIW02bPrOpzZNYpKD9j1AiapLTjJObvhLOilSjV.",
+							"type": "text"
+						},
+						{
+							"key": "skill[name]",
+							"value": "English1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "skill[desc]",
+							"value": "English Skill2",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/skills",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"skills"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_skill_by_id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "token",
+							"value": "$2a$12$XXOO26hp0nlpJWIW02bPrOpzZNYpKD9j1AiapLTjJObvhLOilSjV.",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/skills/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"skills",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post_create_skill",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "token",
+							"value": "$2a$12$XXOO26hp0nlpJWIW02bPrOpzZNYpKD9j1AiapLTjJObvhLOilSjV.",
+							"type": "text"
+						},
+						{
+							"key": "skill[name]",
+							"value": "Bio",
+							"type": "text"
+						},
+						{
+							"key": "skill[desc]",
+							"value": "Bio Skill",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/skills",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"skills"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users_with_skill",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "token",
+							"value": "$2a$12$XXOO26hp0nlpJWIW02bPrOpzZNYpKD9j1AiapLTjJObvhLOilSjV.",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/users_with_skills/6",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users_with_skills",
+						"6"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "$2a$12$XXOO26hp0nlpJWIW02bPrOpzZNYpKD9j1AiapLTjJObvhLOilSjV.",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
