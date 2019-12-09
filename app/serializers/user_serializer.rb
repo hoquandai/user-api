@@ -5,4 +5,6 @@ class UserSerializer
   attributes :image do |user|
     user.image.url if user.image.present?
   end
+
+  attributes :skills
 end

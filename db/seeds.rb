@@ -9,3 +9,6 @@
 User.create(name: 'Ho Quan Dai', email: 'hoquandai@example.com', dob: '1998-08-08', phone: '033444987', gender: 'male', city: 'HCM', password: '12345678')
 User.create(name: 'Le Thanh Thanh Toai', email: 'llthanhtoai@example.com', dob: '1998-11-11', phone: '033444987', gender: 'male', city: 'HCM', password: '12345678')
 User.create(name: 'Do Nhat Tien', email: 'dntien@example.com', dob: '1998-09-09', phone: '033444987', gender: 'male', city: 'HCM', password: '12345678')
+
+Skill.create(name: 'Math', desc: 'Math skills', user_id: 1)
+Skill.create(name: 'Physic', desc: 'Physic skills', user_id: 2)
