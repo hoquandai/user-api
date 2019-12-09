@@ -56,3 +56,5 @@ gem 'fast_jsonapi'
 
 gem 'carrierwave', '~> 2.0'
 gem "shrine", "~> 3.0"
+
+gem 'rack-cors', :require => 'rack/cors'
