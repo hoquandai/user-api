@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :authorize, only: [:create, :new]
+  skip_before_action :authorize, only: [:create, :new, :index, :tutors]
   def index
     users = User.all
     render_serializer users, UserSerializer
@@ -19,7 +19,17 @@ class UsersController < ApplicationController
     if @user.save
       render json: { message: 'User was successfully created' }
     else
-      render json: { message: 'Fail to create user' }, status: 400
+      render json: { message: 'Failed to create user' }, status: 400
+    end
+  end
+
+  def update
+    @user = User.find_by(id: params[:id])
+    @user.update(user_params)
+    if @user.save
+      render json: { message: 'User was successfully updated' }
+    else
+      render json: { message: 'Failed to update user' }, status: 400
     end
   end
 
@@ -29,6 +39,11 @@ class UsersController < ApplicationController
     User.all.each do |user|
       users << user if user.skills.include?(skill)
     end
+    render_serializer users, UserSerializer
+  end
+
+  def tutors
+    users = User.joins(:skills)
     render_serializer users, UserSerializer
   end
 
