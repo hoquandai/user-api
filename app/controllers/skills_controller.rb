@@ -12,7 +12,17 @@ class SkillsController < ApplicationController
     if @skill.save
       render json: { message: 'Skill was successfully created' }
     else
-      render json: { message: 'Fail to create skill' }, status: 400
+      render json: { message: 'Failed to create skill' }, status: 400
+    end
+  end
+
+  def update
+    @skill = Skill.find_by(id: params[:id])
+    @skill.update(skill_params)
+    if @skill.save
+      render json: { message: 'Skill was successfully updated' }
+    else
+      render json: { message: 'Failed to update skill' }, status: 400
     end
   end
 
