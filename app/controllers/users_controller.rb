@@ -44,7 +44,8 @@ class UsersController < ApplicationController
   end
 
   def tutors
-    users = User.joins(:skills)
+    users = User.where.not(skills: ["{}"])
+    users = users.where.not(skills: [])
     render_serializer users, UserSerializer
   end
 
