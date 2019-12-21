@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  class: MyString
+  subject: MyString
+  addr: MyString
+  schedule: MyString
+  time: MyString
+  status: MyString
+  paid: false
+
+two:
+  class: MyString
+  subject: MyString
+  addr: MyString
+  schedule: MyString
+  time: MyString
+  status: MyString
+  paid: false

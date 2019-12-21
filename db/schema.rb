@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_18_160319) do
+ActiveRecord::Schema.define(version: 2019_12_21_101220) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "contracts", force: :cascade do |t|
+    t.string "course"
+    t.string "subject"
+    t.string "addr"
+    t.string "schedule"
+    t.string "time"
+    t.string "status"
+    t.boolean "paid"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "tutor_id"
+    t.integer "student_id"
+  end
 
   create_table "customers", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -54,6 +68,8 @@ ActiveRecord::Schema.define(version: 2019_12_18_160319) do
     t.string "token"
     t.text "image_data"
     t.string "skills", default: [], array: true
+    t.integer "price"
+    t.text "desc"
   end
 
 end
