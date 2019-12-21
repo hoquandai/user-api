@@ -16,6 +16,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+
     if @user.save
       render json: { message: 'User was successfully created' }
     else
@@ -56,7 +57,7 @@ class UsersController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
     params.require(:user).permit(
-      :name, :password, :email, :dob, :gender, :phone, :city, :image_data_uri
+      :name, :password, :email, :dob, :gender, :phone, :city, :image_data_uri, skills: []
     )
   end
 end

@@ -3,5 +3,5 @@ class User < ApplicationRecord
   has_secure_password
 
   include ImageUploader::Attachment(:image) # adds an `image` virtual attribute
-  has_many :skills
+  # has_many :skills
 end
