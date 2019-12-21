@@ -4,4 +4,5 @@ class User < ApplicationRecord
 
   include ImageUploader::Attachment(:image) # adds an `image` virtual attribute
   # has_many :skills
+  has_many :contracts, foreign_key: 'tutor_id'
 end

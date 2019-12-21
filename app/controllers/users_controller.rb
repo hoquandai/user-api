@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :authorize, only: [:create, :new, :index, :tutors]
+  skip_before_action :authorize, only: [:show, :create, :new, :index, :tutors, :contracts]
   def index
     users = User.all
     render_serializer users, UserSerializer
@@ -47,6 +47,11 @@ class UsersController < ApplicationController
     users = User.where.not(skills: ["{}"])
     users = users.where.not(skills: [])
     render_serializer users, UserSerializer
+  end
+
+  def contracts
+    set_user
+    render_serializer @user.contracts, ContractSerializer
   end
 
   private

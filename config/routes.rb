@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get 'users_with_skills/:skill_id' => 'users#with_skill'
   post 'users/:id' => 'users#update'
   get 'tutors' => 'users#tutors'
+  get 'users/:id/contracts' => 'users#contracts'
 
   get 'skills/:id' => 'skills#show'
   get 'skills' => 'skills#index'
