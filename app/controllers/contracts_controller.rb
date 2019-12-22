@@ -20,7 +20,7 @@ class ContractsController < ApplicationController
     @contract = Contract.new(contract_params)
 
     if @contract.save
-      render :show, status: :created, location: @contract
+      render_serializer @contract, ContractSerializer
     else
       render json: @contract.errors, status: :unprocessable_entity
     end
@@ -30,7 +30,7 @@ class ContractsController < ApplicationController
   # PATCH/PUT /contracts/1.json
   def update
     if @contract.update(contract_params)
-      render :show, status: :ok, location: @contract
+      render_serializer @contract, ContractSerializer
     else
       render json: @contract.errors, status: :unprocessable_entity
     end
@@ -50,6 +50,6 @@ class ContractsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contract_params
-      params.require(:contract).permit(:class, :subject, :addr, :schedule, :time, :status, :paid, :tutor_id, :student_id)
+      params.require(:contract).permit(:course, :subject, :addr, :schedule, :time, :status, :paid, :tutor_id, :student_id)
     end
 end
