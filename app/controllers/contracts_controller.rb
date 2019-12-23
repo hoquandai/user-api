@@ -50,6 +50,6 @@ class ContractsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contract_params
-      params.require(:contract).permit(:course, :subject, :addr, :schedule, :time, :status, :paid, :tutor_id, :student_id)
+      params.require(:contract).permit(:course, :subject, :addr, :schedule, :time, :status, :paid, :tutor_id, :student_id, :price, :complaint)
     end
 end
