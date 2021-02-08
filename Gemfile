@@ -54,7 +54,7 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'fast_jsonapi'
 
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 gem 'shrine', '~> 3.0'
 
 gem 'rack-cors', require: 'rack/cors'
